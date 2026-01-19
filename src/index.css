@@ -1,1 +1,146 @@
 @import "tailwindcss";
+
+@theme {
+    /* ================================
+       Tipografia
+    ================================= */
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    /* ================================
+       Core – tons espaciais (dark)
+    ================================= */
+
+    /* Space Blue / Primary */
+    --color-orbit-50:  #eef4ff;
+    --color-orbit-100: #dbe7ff;
+    --color-orbit-200: #bfd4ff;
+    --color-orbit-300: #93b7ff;
+    --color-orbit-400: #5f8cff;
+    --color-orbit-500: #3b82f6; /* NASA blue */
+    --color-orbit-600: #2563eb;
+    --color-orbit-700: #1d4ed8;
+    --color-orbit-800: #1e40af;
+    --color-orbit-900: #1e3a8a;
+
+    /* Deep Space / Background */
+    --color-space-50:  #f5f7fa;
+    --color-space-100: #e6eaf0;
+    --color-space-200: #cfd6e2;
+    --color-space-300: #aab6cc;
+    --color-space-400: #6e7fa0;
+    --color-space-500: #111827; /* panels */
+    --color-space-600: #0f1626;
+    --color-space-700: #0d1321;
+    --color-space-800: #0b0e14; /* main bg */
+    --color-space-900: #070a10;
+
+    /* Stellar Gray / Text */
+    --color-stellar-50:  #f9fafb;
+    --color-stellar-100: #f3f4f6;
+    --color-stellar-200: #e5e7eb;
+    --color-stellar-300: #d1d5db;
+    --color-stellar-400: #9ca3af;
+    --color-stellar-500: #6b7280;
+    --color-stellar-600: #4b5563;
+    --color-stellar-700: #374151;
+    --color-stellar-800: #1f2933;
+    --color-stellar-900: #111827;
+
+    /* Solar Accent (datas, alerts, highlights científicos) */
+    --color-solar-50:  #fff7ed;
+    --color-solar-100: #ffedd5;
+    --color-solar-200: #fed7aa;
+    --color-solar-300: #fdba74;
+    --color-solar-400: #fb923c;
+    --color-solar-500: #f59e0b;
+    --color-solar-600: #d97706;
+    --color-solar-700: #b45309;
+    --color-solar-800: #92400e;
+    --color-solar-900: #78350f;
+
+    /* ================================
+       Neutros utilitários
+    ================================= */
+    --color-ink: #0b0e14;
+    --color-paper: #ffffff;
+
+    /* ================================
+       Radius
+    ================================= */
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+
+    /* ================================
+       Shadows (bem sutis)
+    ================================= */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --shadow-lift: 0 16px 50px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+    }
+}
+
+@keyframes moonIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 14px, 0) scale(0.98);
+        filter: blur(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%      { opacity: 0.85; transform: scale(1.04); }
+}
+
+@keyframes drift {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-60px, 40px, 0); }
+}
+
+@keyframes orbit {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(160px); }
+    to   { transform: translate(-50%, -50%) rotate(360deg) translateX(160px); }
+}
+
+@keyframes swap {
+    0% {
+        opacity: 0;
+        transform: scale(0.985);
+        filter: blur(2px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+
+html, body {
+    background: rgb(var(--color-space-800));
+    color: rgb(var(--color-stellar-50));
+}
