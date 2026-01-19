@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 
 export default function Hero() {
     const heroRef = useRef(null);
@@ -8,15 +8,14 @@ export default function Hero() {
 
     const BODIES = useMemo(
         () => [
-            { id: "earth", label: "Earth", mediaType: "video", src: "/videos/spinning-earth.mp4" },
-            { id: "mars", label: "Mars", mediaType: "video", src: "/videos/spinning-mars.mp4" },
-            { id: "moon", label: "Moon", mediaType: "video", src: "/videos/spinning-moon.mp4" },
+            {id: "earth", label: "Earth", mediaType: "video", src: "/videos/spinning-earth.mp4"},
+            {id: "mars", label: "Mars", mediaType: "video", src: "/videos/spinning-mars.mp4"},
+            {id: "moon", label: "Moon", mediaType: "video", src: "/videos/spinning-moon.mp4"},
         ],
         []
     );
 
     const [activeBody, setActiveBody] = useState(() => {
-        // opcional: persistência
         try {
             return localStorage.getItem("activeBody") || "earth";
         } catch {
@@ -27,10 +26,9 @@ export default function Hero() {
     const body = BODIES.find((b) => b.id === activeBody) ?? BODIES[0];
 
     useEffect(() => {
-        // opcional: persistência
         try {
             localStorage.setItem("activeBody", activeBody);
-        } catch {}
+        } catch { /* empty */ }
     }, [activeBody]);
 
     useEffect(() => {
@@ -43,7 +41,7 @@ export default function Hero() {
             window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
         if (reduceMotion) return;
 
-        const state = { tx: 0, ty: 0, cx: 0, cy: 0 };
+        const state = {tx: 0, ty: 0, cx: 0, cy: 0};
 
         const loop = () => {
             state.cx += (state.tx - state.cx) * 0.10;
@@ -74,8 +72,8 @@ export default function Hero() {
         };
 
         rafRef.current = requestAnimationFrame(loop);
-        hero.addEventListener("mousemove", onMove, { passive: true });
-        hero.addEventListener("mouseleave", onLeave, { passive: true });
+        hero.addEventListener("mousemove", onMove, {passive: true});
+        hero.addEventListener("mouseleave", onLeave, {passive: true});
 
         return () => {
             cancelAnimationFrame(rafRef.current);
@@ -89,32 +87,29 @@ export default function Hero() {
             ref={heroRef}
             className="relative min-h-screen overflow-hidden bg-space-800 flex items-center"
         >
-            {/* BG space */}
             <div
                 ref={bgRef}
                 className="absolute inset-0 bg-cover bg-center will-change-transform"
-                style={{ backgroundImage: "url(/images/space-bg.jpg)" }}
+                style={{backgroundImage: "url(/images/space-bg.jpg)"}}
             />
 
-            {/* Stars drift (sutil) */}
             <div className="pointer-events-none absolute inset-0 opacity-[0.10] motion-reduce:hidden">
                 <div className="absolute -inset-20 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,.6)_0,rgba(255,255,255,0)_45%),radial-gradient(circle_at_70%_60%,rgba(255,255,255,.5)_0,rgba(255,255,255,0)_40%),radial-gradient(circle_at_40%_80%,rgba(255,255,255,.35)_0,rgba(255,255,255,0)_35%)] animate-[drift_26s_linear_infinite]" />
             </div>
 
-            {/* Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-r from-space-900/90 via-space-900/55 to-space-900/20" />
-            <div className="absolute inset-0 bg-gradient-to-t from-space-900/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-space-900/90 via-space-900/55 to-space-900/20"/>
+            <div className="absolute inset-0 bg-gradient-to-t from-space-900/70 via-transparent to-transparent"/>
 
             <div className="relative mx-auto max-w-7xl px-6 w-full pt-24">
                 <div className="grid items-center gap-16 lg:grid-cols-2">
-                    {/* ================= LEFT TEXT (ENGLISH) ================= */}
+                    {/* ================= LEFT TEXT ================= */}
                     <div>
                         <p className="font-mono text-sm text-stellar-300/90 opacity-0 animate-[fadeUp_.7s_ease-out_both] motion-reduce:animate-none">
                             NASA Data Explorer
                         </p>
 
                         <h1 className="mt-4 font-display text-5xl sm:text-6xl xl:text-7xl tracking-tight text-stellar-100 opacity-0 animate-[fadeUp_.85s_ease-out_both] [animation-delay:120ms] motion-reduce:animate-none">
-                            Explore the universe <br className="hidden sm:block" />
+                            Explore the universe <br className="hidden sm:block"/>
                             through real data
                         </h1>
 
@@ -137,7 +132,6 @@ export default function Hero() {
                             </a>
                         </div>
 
-                        {/* Planet switch (below CTA) */}
                         <div className="mt-6 opacity-0 animate-[fadeUp_.85s_ease-out_both] [animation-delay:380ms] motion-reduce:animate-none">
                             <p className="mb-2 text-xs font-mono tracking-wider text-stellar-400">
                                 Viewing
@@ -181,7 +175,6 @@ export default function Hero() {
 
                     {/* ================= RIGHT BODY ================= */}
                     <div className="relative flex justify-center lg:justify-end">
-                        {/* Wrapper com parallax */}
                         <div
                             ref={moonWrapRef}
                             className="group relative w-80 sm:w-[26rem] lg:w-[32rem] xl:w-[40rem] will-change-transform

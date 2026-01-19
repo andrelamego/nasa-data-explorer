@@ -13,7 +13,6 @@ export default function Header() {
             <div className="mx-auto max-w-7xl px-6">
                 <div className="relative flex items-center justify-between">
 
-                    {/* LOGO — flat */}
                     <a
                         href="/"
                         className="flex items-center gap-3 text-stellar-100 hover:text-stellar-200 transition"
@@ -24,7 +23,6 @@ export default function Header() {
                         </span>
                     </a>
 
-                    {/* NAV CENTRAL — único pill */}
                     <nav className="absolute left-1/2 -translate-x-1/2">
                         <div className="flex items-center gap-1 rounded-full bg-space-800/70 px-2 py-2 border border-white/10 backdrop-blur shadow-[0_12px_40px_rgba(0,0,0,0.45)]">
                             <a className={linkClass("apod")} href="#apod">APOD</a>
@@ -34,7 +32,6 @@ export default function Header() {
                         </div>
                     </nav>
 
-                    {/* GITHUB — flat */}
                     <a
                         href="https://github.com/andrelamego/nasa-apod-gallery"
                         target="_blank"

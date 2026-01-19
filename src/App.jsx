@@ -6,6 +6,9 @@ import DatePicker from "./components/DatePicker.jsx";
 import ErrorMessage from "./components/ErrorMessage.jsx";
 import Loading from "./components/Loading.jsx";
 import ApodCard from "./components/ApodCard.jsx";
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(getTodayDate());
@@ -17,21 +20,19 @@ function App() {
 
   return (
       <div>
-        <header>
-          <h1>NASA APOD Gallery</h1>
-          <p>Astronomic Picture of the Day</p>
-        </header>
+        <Header />
+        <Hero />
+        <Footer />
+        {/*<DatePicker*/}
+        {/*  selectedDate={selectedDate}*/}
+        {/*  onDateChange={handleDateChange}*/}
+        {/*/>*/}
 
-        <DatePicker
-          selectedDate={selectedDate}
-          onDateChange={handleDateChange}
-        />
-
-        <main>
-          {loading && <Loading />}
-          {error && <ErrorMessage message={error} onRetry={refetch(selectedDate)} />}
-          {!loading && !error && data && <ApodCard data={data} />}
-        </main>
+        {/*<main>*/}
+        {/*  {loading && <Loading />}*/}
+        {/*  {error && <ErrorMessage message={error} onRetry={refetch(selectedDate)} />}*/}
+        {/*  {!loading && !error && data && <ApodCard data={data} />}*/}
+        {/*</main>*/}
       </div>
   )
 }
