@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
     <script>
-        const path = window.location.pathname.replace(
-            "/nasa-data-explorer",
-            ""
-        );
-        window.location.replace(
-            "/nasa-data-explorer/?redirect=" + path
-        );
+        var base = "/nasa-data-explorer";
+        var path = window.location.pathname;
+
+        if (path.startsWith(base)) path = path.slice(base.length);
+
+        window.location.replace(base + "/?redirect=" + encodeURIComponent(path));
     </script>
 </head>
+<body></body>
 </html>
