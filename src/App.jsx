@@ -11,7 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/nasa-data-explorer">
             <Routes>
                 <Route element={<HomeLayout />}>
                     <Route path="/" element={<HomePage />} />
