@@ -7,8 +7,12 @@ const params = new URLSearchParams(window.location.search);
 const redirect = params.get("redirect");
 
 if (redirect) {
-    const decoded = decodeURIComponent(redirect);
-    window.history.replaceState(null, "", decoded || "/");
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    const decoded = decodeURIComponent(redirect || "/");
+
+    const path = decoded.startsWith("/") ? decoded : `/${decoded}`;
+
+    window.history.replaceState(null, "", `${base}${path}`);
 }
 
 createRoot(document.getElementById("root")).render(
