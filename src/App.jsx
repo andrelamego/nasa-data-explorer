@@ -1,45 +1,30 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css'
-import {useState} from "react";
-import {getTodayDate} from "./utils/dataUtils.js";
-import {useApod} from "./hooks/useApod.js";
-import DatePicker from "./components/DatePicker.jsx";
-import ErrorMessage from "./components/ErrorMessage.jsx";
-import Loading from "./components/Loading.jsx";
-import ApodCard from "./components/ApodCard.jsx";
-import Header from "./components/Header.jsx";
-import Hero from "./components/Hero.jsx";
-import Footer from "./components/Footer.jsx";
-import HomePage from "./pages/HomePage.jsx";
-import Layout from "./layout/Layout.jsx";
+import HomeLayout from "./layouts/HomeLayout";
+import MainLayout from "./layouts/MainLayout";
 
-function App() {
-  // const [selectedDate, setSelectedDate] = useState(getTodayDate());
-  // const { data, loading, error, refetch } = useApod(selectedDate);
-  //
-  // const handleDateChange = (newDate) => {
-  //   setSelectedDate(newDate);
-  // }
+import HomePage from "./pages/HomePage";
+import ApodPage from "./pages/ApodPage";
+// import MarsPage from "./pages/MarsPage";
+// import NeoPage from "./pages/NeoPage";
+// import EarthPage from "./pages/EarthPage";
+// import NotFoundPage from "./pages/NotFoundPage";
 
-  return (
-      <BrowserRouter>
-          <Routes>
-              <Route element={<Layout />}>
-                  {/* landing */}
-                  <Route path="/" element={<HomePage />} />
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route element={<HomeLayout />}>
+                    <Route path="/" element={<HomePage />} />
+                </Route>
 
-                  {/* pages */}
-                  <Route path="/apod" element={""} />
-                  <Route path="/mars" element={""} />
-                  <Route path="/neo" element={""} />
-                  <Route path="/earth" element={""} />
-
-                  {/* 404 */}
-                  <Route path="*" element={""} />
-              </Route>
-          </Routes>
-      </BrowserRouter>
-  )
+                <Route element={<MainLayout />}>
+                    <Route path="/apod" element={<ApodPage />} />
+                    {/*<Route path="/mars" element={<MarsPage />} />*/}
+                    {/*<Route path="/neo" element={<NeoPage />} />*/}
+                    {/*<Route path="/earth" element={<EarthPage />} />*/}
+                    {/*<Route path="*" element={<NotFoundPage />} />*/}
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
-
-export default App
