@@ -7,7 +7,7 @@ A web application that provides access to various NASA APIs, allowing users to e
 NASA Explorer is a React-based web application that interfaces with multiple NASA APIs to deliver space-related content
 and data. The application features a modern, space-themed interface with smooth navigation and responsive design.
 
-[hero-showcase.mp4](public/videos/hero-showcase.mp4)
+![hero-showcase](https://github.com/user-attachments/assets/2bddf686-f34d-4838-98d8-c2d0a1f575ac)
 
 ## Features
 
@@ -25,7 +25,6 @@ and data. The application features a modern, space-themed interface with smooth 
 - **Mars Rover Photos**: Browse images captured by Mars rovers
 - **NEO (Near Earth Objects)**: Track asteroids and comets near Earth
 - **Earth Imagery**: View satellite images of Earth
-- **404 Error Page**: Custom not found page
 
 ## Tech Stack
 
