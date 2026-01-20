@@ -1,4 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
+import {NavLink} from "react-router-dom";
 
 export default function Hero() {
     const heroRef = useRef(null);
@@ -118,18 +119,12 @@ export default function Hero() {
                         </p>
 
                         <div className="mt-10 flex flex-wrap gap-4 opacity-0 animate-[fadeUp_.85s_ease-out_both] [animation-delay:320ms] motion-reduce:animate-none">
-                            <a
-                                href="#astronomy"
-                                className="rounded-xl bg-orbit-500 px-6 py-3 text-base font-medium text-white hover:bg-orbit-400 transition"
-                            >
+                            <NavLink to="/apod" className="rounded-xl bg-orbit-500 px-6 py-3 text-base font-medium text-white hover:bg-orbit-400 transition">
                                 Start exploring
-                            </a>
-                            <a
-                                href="#apod"
-                                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-base text-stellar-200 hover:bg-white/10 transition"
-                            >
+                            </NavLink>
+                            <NavLink to="/apod" className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-base text-stellar-200 hover:bg-white/10 transition">
                                 View APOD
-                            </a>
+                            </NavLink>
                         </div>
 
                         <div className="mt-6 opacity-0 animate-[fadeUp_.85s_ease-out_both] [animation-delay:380ms] motion-reduce:animate-none">
