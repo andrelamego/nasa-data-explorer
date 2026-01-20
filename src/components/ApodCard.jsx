@@ -15,7 +15,6 @@ const ApodCard = ({ data }) => {
 
         const diff = Math.abs(imgRatio - targetRatio) / targetRatio;
 
-        // se a diferença for maior que 20%, usa contain
         setFit(diff > 0.3 ? "contain" : "cover");
     };
 

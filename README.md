@@ -1,16 +1,34 @@
-# React + Vite
+# NASA Data Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that provides access to various NASA APIs, allowing users to explore astronomical data and imagery.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+NASA Explorer is a React-based web application that interfaces with multiple NASA APIs to deliver space-related content
+and data. The application features a modern, space-themed interface with smooth navigation and responsive design.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Currently Implemented
 
-## Expanding the ESLint configuration
+- **APOD (Astronomy Picture of the Day)**: View daily astronomical images and videos with detailed explanations
+    - Support for both images and videos
+    - High-definition image viewing
+    - Automatic aspect ratio detection for optimal display
+    - Copyright information display
+    - Direct links to HD versions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Planned Features
+
+- **Mars Rover Photos**: Browse images captured by Mars rovers
+- **NEO (Near Earth Objects)**: Track asteroids and comets near Earth
+- **Earth Imagery**: View satellite images of Earth
+- **404 Error Page**: Custom not found page
+
+## Tech Stack
+
+- React 18
+- React Router DOM
+- Vite
+- Tailwind CSS
+- Lucide React (icons)

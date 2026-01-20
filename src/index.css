@@ -18,7 +18,7 @@
     --color-orbit-200: #bfd4ff;
     --color-orbit-300: #93b7ff;
     --color-orbit-400: #5f8cff;
-    --color-orbit-500: #3b82f6; /* NASA blue */
+    --color-orbit-500: #3b82f6;
     --color-orbit-600: #2563eb;
     --color-orbit-700: #1d4ed8;
     --color-orbit-800: #1e40af;
@@ -30,10 +30,10 @@
     --color-space-200: #cfd6e2;
     --color-space-300: #aab6cc;
     --color-space-400: #6e7fa0;
-    --color-space-500: #111827; /* panels */
+    --color-space-500: #111827;
     --color-space-600: #0f1626;
     --color-space-700: #0d1321;
-    --color-space-800: #0b0e14; /* main bg */
+    --color-space-800: #0b0e14;
     --color-space-900: #070a10;
 
     /* Stellar Gray / Text */
@@ -48,7 +48,7 @@
     --color-stellar-800: #1f2933;
     --color-stellar-900: #111827;
 
-    /* Solar Accent (datas, alerts, highlights científicos) */
+    /* Solar Accent (datas, alerts) */
     --color-solar-50:  #fff7ed;
     --color-solar-100: #ffedd5;
     --color-solar-200: #fed7aa;
@@ -74,7 +74,7 @@
     --radius-2xl: 20px;
 
     /* ================================
-       Shadows (bem sutis)
+       Shadows
     ================================= */
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
     --shadow-lift: 0 16px 50px rgba(0, 0, 0, 0.45);
