@@ -9,7 +9,8 @@ export const nasaApi = {
             const response = await axios.get(BASE_URL, {
                 params: {
                     api_key: API_KEY,
-                    date
+                    date,
+                    thumbs: true,
                 }
             });
             return response.data;
@@ -22,7 +23,8 @@ export const nasaApi = {
         try {
             const response = await axios.get(BASE_URL, {
                 params: {
-                    api_key: API_KEY
+                    api_key: API_KEY,
+                    thumbs: true,
                 }
             });
             return response.data;
@@ -37,7 +39,8 @@ export const nasaApi = {
                 params: {
                     api_key: API_KEY,
                     start_date: startDate,
-                    end_date: endDate
+                    end_date: endDate,
+                    thumbs: true,
                 }
             });
             return response.data;
