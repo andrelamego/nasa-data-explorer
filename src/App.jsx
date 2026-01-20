@@ -7,7 +7,7 @@ import ApodPage from "./pages/ApodPage";
 // import MarsPage from "./pages/MarsPage";
 // import NeoPage from "./pages/NeoPage";
 // import EarthPage from "./pages/EarthPage";
-// import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
     return (
@@ -15,6 +15,8 @@ export default function App() {
             <Routes>
                 <Route element={<HomeLayout />}>
                     <Route path="/" element={<HomePage />} />
+
+                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
 
                 <Route element={<MainLayout />}>
@@ -22,7 +24,6 @@ export default function App() {
                     {/*<Route path="/mars" element={<MarsPage />} />*/}
                     {/*<Route path="/neo" element={<NeoPage />} />*/}
                     {/*<Route path="/earth" element={<EarthPage />} />*/}
-                    {/*<Route path="*" element={<NotFoundPage />} />*/}
                 </Route>
             </Routes>
         </BrowserRouter>
