@@ -25,7 +25,6 @@ and data. The application features a modern, space-themed interface with smooth 
 - **Mars Rover Photos**: Browse images captured by Mars rovers
 - **NEO (Near Earth Objects)**: Track asteroids and comets near Earth
 - **Earth Imagery**: View satellite images of Earth
-- **404 Error Page**: Custom not found page
 
 ## Tech Stack
 
