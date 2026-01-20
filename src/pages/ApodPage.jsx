@@ -5,6 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import ApodCard from "../components/ApodCard";
 import ApodSkeleton from "../components/ApodSkeleton";
 import { getTodayDate } from "../utils/dataUtils";
+import { publicUrl } from "../utils/asset.js";
 
 export default function ApodPage() {
     const today = useMemo(() => getTodayDate(), []);
@@ -24,7 +25,7 @@ export default function ApodPage() {
         <section className="relative min-h-screen overflow-hidden bg-space-900">
             <div
                 className="pointer-events-none absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url(/images/space-bg.jpg)" }}
+                style={{ backgroundImage: `url(${publicUrl("images/space-bg.jpg")})` }}
             />
 
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-space-900/85 via-space-900/60 to-space-900/30" />

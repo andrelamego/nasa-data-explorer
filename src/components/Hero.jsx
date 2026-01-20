@@ -1,5 +1,6 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {NavLink} from "react-router-dom";
+import { publicUrl } from "../utils/asset.js";
 
 export default function Hero() {
     const heroRef = useRef(null);
@@ -9,9 +10,9 @@ export default function Hero() {
 
     const BODIES = useMemo(
         () => [
-            {id: "earth", label: "Earth", mediaType: "video", src: "/videos/spinning-earth.mp4"},
-            {id: "mars", label: "Mars", mediaType: "video", src: "/videos/spinning-mars.mp4"},
-            {id: "moon", label: "Moon", mediaType: "video", src: "/videos/spinning-moon.mp4"},
+            {id: "earth", label: "Earth", mediaType: "video", src: publicUrl("videos/spinning-earth.mp4")},
+            {id: "mars", label: "Mars", mediaType: "video", src: publicUrl("videos/spinning-mars.mp4")},
+            {id: "moon", label: "Moon", mediaType: "video", src: publicUrl("videos/spinning-moon.mp4")},
         ],
         []
     );
@@ -91,7 +92,7 @@ export default function Hero() {
             <div
                 ref={bgRef}
                 className="absolute inset-0 bg-cover bg-center will-change-transform"
-                style={{backgroundImage: "url(/images/space-bg.jpg)"}}
+                style={{ backgroundImage: `url(${publicUrl("images/space-bg.jpg")})` }}
             />
 
             <div className="pointer-events-none absolute inset-0 opacity-[0.10] motion-reduce:hidden">
@@ -180,6 +181,7 @@ export default function Hero() {
                             <div key={activeBody} className="animate-[swap_.45s_ease-in-out_both] motion-reduce:animate-none">
                                 {body.mediaType === "video" ? (
                                     <video
+                                        key={body.src}
                                         src={body.src}
                                         autoPlay
                                         loop
