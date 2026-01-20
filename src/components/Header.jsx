@@ -66,7 +66,7 @@ export default function Header() {
 
                     {/* github */}
                     <a
-                        href="https://github.com/andrelamego/nasa-apod-gallery"
+                        href="https://github.com/andrelamego/nasa-data-explorer"
                         target="_blank"
                         rel="noreferrer"
                         className={[
